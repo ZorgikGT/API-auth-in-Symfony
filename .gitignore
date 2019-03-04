@@ -1,0 +1,6 @@
+/public/bundles/
+/var/
+/vendor/
+.idea/*
+/phpunit.xml
+/public/files/*
