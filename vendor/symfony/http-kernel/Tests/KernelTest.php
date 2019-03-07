@@ -302,7 +302,7 @@ EOF;
     {
         $kernel = new KernelForTest('test', true);
 
-        $this->assertEquals(__DIR__ . \DIRECTORY_SEPARATOR, realpath($kernel->getRootDir()));
+        $this->assertEquals(__DIR__.\DIRECTORY_SEPARATOR.'Fixtures', realpath($kernel->getRootDir()));
     }
 
     /**
@@ -368,7 +368,7 @@ EOF;
         $kernel
             ->expects($this->once())
             ->method('getBundle')
-            ->will($this->returnValue($this->getBundle(__DIR__ . '/Fixtures/Bundle1Bundle')))
+            ->will($this->returnValue($this->getBundle(__DIR__.'/Fixtures/Bundle1Bundle')))
         ;
 
         $kernel->locateResource('@Bundle1Bundle/config/routing.xml');
@@ -380,10 +380,10 @@ EOF;
         $kernel
             ->expects($this->once())
             ->method('getBundle')
-            ->will($this->returnValue($this->getBundle(__DIR__ . '/Fixtures/Bundle1Bundle')))
+            ->will($this->returnValue($this->getBundle(__DIR__.'/Fixtures/Bundle1Bundle')))
         ;
 
-        $this->assertEquals(__DIR__ . '/Fixtures/Bundle1Bundle/foo.txt', $kernel->locateResource('@Bundle1Bundle/foo.txt'));
+        $this->assertEquals(__DIR__.'/Fixtures/Bundle1Bundle/foo.txt', $kernel->locateResource('@Bundle1Bundle/foo.txt'));
     }
 
     public function testLocateResourceIgnoresDirOnNonResource()
@@ -392,11 +392,11 @@ EOF;
         $kernel
             ->expects($this->once())
             ->method('getBundle')
-            ->will($this->returnValue($this->getBundle(__DIR__ . '/Fixtures/Bundle1Bundle')))
+            ->will($this->returnValue($this->getBundle(__DIR__.'/Fixtures/Bundle1Bundle')))
         ;
 
         $this->assertEquals(
-            __DIR__ . '/Fixtures/Bundle1Bundle/foo.txt',
+            __DIR__.'/Fixtures/Bundle1Bundle/foo.txt',
             $kernel->locateResource('@Bundle1Bundle/foo.txt', __DIR__.'/Fixtures')
         );
     }
@@ -411,7 +411,7 @@ EOF;
         ;
 
         $this->assertEquals(
-            __DIR__ . '/Fixtures/Resources/FooBundle/foo.txt',
+            __DIR__.'/Fixtures/Resources/FooBundle/foo.txt',
             $kernel->locateResource('@FooBundle/Resources/foo.txt', __DIR__.'/Fixtures/Resources')
         );
     }
@@ -426,11 +426,11 @@ EOF;
         ;
 
         $this->assertEquals(
-            __DIR__ . '/Fixtures/Resources/FooBundle/',
+            __DIR__.'/Fixtures/Resources/FooBundle/',
             $kernel->locateResource('@FooBundle/Resources/', __DIR__.'/Fixtures/Resources')
         );
         $this->assertEquals(
-            __DIR__ . '/Fixtures/Resources/FooBundle',
+            __DIR__.'/Fixtures/Resources/FooBundle',
             $kernel->locateResource('@FooBundle/Resources', __DIR__.'/Fixtures/Resources')
         );
 
@@ -438,15 +438,15 @@ EOF;
         $kernel
             ->expects($this->exactly(2))
             ->method('getBundle')
-            ->will($this->returnValue($this->getBundle(__DIR__ . '/Fixtures/Bundle1Bundle', null, null, 'Bundle1Bundle')))
+            ->will($this->returnValue($this->getBundle(__DIR__.'/Fixtures/Bundle1Bundle', null, null, 'Bundle1Bundle')))
         ;
 
         $this->assertEquals(
-            __DIR__ . '/Fixtures/Bundle1Bundle/Resources/',
+            __DIR__.'/Fixtures/Bundle1Bundle/Resources/',
             $kernel->locateResource('@Bundle1Bundle/Resources/')
         );
         $this->assertEquals(
-            __DIR__ . '/Fixtures/Bundle1Bundle/Resources',
+            __DIR__.'/Fixtures/Bundle1Bundle/Resources',
             $kernel->locateResource('@Bundle1Bundle/Resources')
         );
     }
@@ -520,8 +520,8 @@ EOF;
         $kernel = new CustomProjectDirKernel();
         $kernel->boot();
 
-        $this->assertSame(__DIR__ . '/Fixtures', $kernel->getProjectDir());
-        $this->assertSame(__DIR__ . \DIRECTORY_SEPARATOR, $kernel->getContainer()->getParameter('kernel.project_dir'));
+        $this->assertSame(__DIR__.'/Fixtures', $kernel->getProjectDir());
+        $this->assertSame(__DIR__.\DIRECTORY_SEPARATOR.'Fixtures', $kernel->getContainer()->getParameter('kernel.project_dir'));
     }
 
     public function testKernelReset()
@@ -669,7 +669,7 @@ EOF;
         ;
         $p = new \ReflectionProperty($kernel, 'rootDir');
         $p->setAccessible(true);
-        $p->setValue($kernel, __DIR__ . '/Fixtures');
+        $p->setValue($kernel, __DIR__.'/Fixtures');
 
         return $kernel;
     }
@@ -682,7 +682,7 @@ EOF;
             ->getMock();
         $p = new \ReflectionProperty($kernel, 'rootDir');
         $p->setAccessible(true);
-        $p->setValue($kernel, __DIR__ . '/Fixtures');
+        $p->setValue($kernel, __DIR__.'/Fixtures');
 
         return $kernel;
     }
@@ -727,7 +727,7 @@ class CustomProjectDirKernel extends Kernel
 
     public function getProjectDir()
     {
-        return __DIR__ . '/Fixtures';
+        return __DIR__.'/Fixtures';
     }
 
     protected function build(ContainerBuilder $container)

@@ -171,7 +171,7 @@ class RouterListener implements EventSubscriberInterface
         $docVersion = substr(Kernel::VERSION, 0, 3);
 
         ob_start();
-        include __DIR__ . '/../Resources/welcome.html.php';
+        include __DIR__.'/../Resources/welcome.html.php';
 
         return new Response(ob_get_clean(), Response::HTTP_NOT_FOUND);
     }

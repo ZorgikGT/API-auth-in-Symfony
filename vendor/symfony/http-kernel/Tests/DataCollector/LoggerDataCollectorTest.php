@@ -30,7 +30,7 @@ class LoggerDataCollectorTest extends TestCase
         $logger->expects($this->once())->method('countErrors')->will($this->returnValue('foo'));
         $logger->expects($this->exactly(2))->method('getLogs')->will($this->returnValue([]));
 
-        $c = new LoggerDataCollector($logger, __DIR__ . 'LoggerDataCollectorTest.php/');
+        $c = new LoggerDataCollector($logger, __DIR__.'/');
         $c->lateCollect();
         $compilerLogs = $c->getCompilerLogs()->getValue('message');
 
@@ -58,7 +58,7 @@ class LoggerDataCollectorTest extends TestCase
         $logger->expects($this->once())->method('countErrors')->with(null);
         $logger->expects($this->exactly(2))->method('getLogs')->with(null)->will($this->returnValue([]));
 
-        $c = new LoggerDataCollector($logger, __DIR__ . 'LoggerDataCollectorTest.php/', $stack);
+        $c = new LoggerDataCollector($logger, __DIR__.'/', $stack);
 
         $c->collect($masterRequest, new Response());
         $c->lateCollect();
@@ -79,7 +79,7 @@ class LoggerDataCollectorTest extends TestCase
         $logger->expects($this->once())->method('countErrors')->with($subRequest);
         $logger->expects($this->exactly(2))->method('getLogs')->with($subRequest)->will($this->returnValue([]));
 
-        $c = new LoggerDataCollector($logger, __DIR__ . 'LoggerDataCollectorTest.php/', $stack);
+        $c = new LoggerDataCollector($logger, __DIR__.'/', $stack);
 
         $c->collect($subRequest, new Response());
         $c->lateCollect();

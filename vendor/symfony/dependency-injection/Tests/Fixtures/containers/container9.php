@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../includes/classes.php';
-require_once __DIR__ . '/../includes/foo.php';
+require_once __DIR__.'/../includes/classes.php';
+require_once __DIR__.'/../includes/foo.php';
 
 use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
@@ -50,7 +50,7 @@ $container->getParameterBag()->add([
 ]);
 $container
     ->register('method_call1', 'Bar\FooClass')
-    ->setFile(realpath(__DIR__ . '/../includes/foo.php'))
+    ->setFile(realpath(__DIR__.'/../includes/foo.php'))
     ->addMethodCall('setBar', [new Reference('foo')])
     ->addMethodCall('setBar', [new Reference('foo2', ContainerInterface::NULL_ON_INVALID_REFERENCE)])
     ->addMethodCall('setBar', [new Reference('foo3', ContainerInterface::IGNORE_ON_INVALID_REFERENCE)])

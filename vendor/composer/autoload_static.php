@@ -8,6 +8,8 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -16,15 +18,26 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
             'Zend\\EventManager\\' => 18,
             'Zend\\Code\\' => 10,
         ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Flex\\' => 13,
             'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarExporter\\' => 30,
+            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Stopwatch\\' => 28,
+            'Symfony\\Component\\Security\\Http\\' => 32,
+            'Symfony\\Component\\Security\\Guard\\' => 33,
+            'Symfony\\Component\\Security\\Core\\' => 32,
             'Symfony\\Component\\Routing\\' => 26,
+            'Symfony\\Component\\PropertyAccess\\' => 33,
+            'Symfony\\Component\\Inflector\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
@@ -36,7 +49,11 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
+            'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
+            'Symfony\\Bundle\\TwigBundle\\' => 26,
+            'Symfony\\Bundle\\MakerBundle\\' => 27,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
+            'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\Doctrine\\' => 24,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
         ),
@@ -46,6 +63,7 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
         ),
         'D' => 
@@ -78,6 +96,14 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -98,13 +124,37 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
         array (
             0 => __DIR__ . '/..' . '/symfony/var-exporter',
         ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
         'Symfony\\Component\\Stopwatch\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/stopwatch',
         ),
+        'Symfony\\Component\\Security\\Http\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security-http',
+        ),
+        'Symfony\\Component\\Security\\Guard\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security-guard',
+        ),
+        'Symfony\\Component\\Security\\Core\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security-core',
+        ),
         'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
+        ),
+        'Symfony\\Component\\PropertyAccess\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/property-access',
+        ),
+        'Symfony\\Component\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/inflector',
         ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
@@ -150,9 +200,25 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
         ),
+        'Symfony\\Bundle\\WebProfilerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/web-profiler-bundle',
+        ),
+        'Symfony\\Bundle\\TwigBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/twig-bundle',
+        ),
+        'Symfony\\Bundle\\MakerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/maker-bundle/src',
+        ),
         'Symfony\\Bundle\\FrameworkBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/framework-bundle',
+        ),
+        'Symfony\\Bridge\\Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/twig-bridge',
         ),
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
@@ -177,6 +243,10 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PhpParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
         'PackageVersions\\' => 
         array (
@@ -240,6 +310,13 @@ class ComposerStaticInit82017342905e639c9adf473f7f6f4cfb
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
         'P' => 
         array (
             'ProxyManager\\' => 

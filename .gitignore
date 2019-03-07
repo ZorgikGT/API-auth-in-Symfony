@@ -1,5 +1,5 @@
 /public/bundles/
-/var/
+/var/*
 /vendor/
 .idea/*
 /phpunit.xml

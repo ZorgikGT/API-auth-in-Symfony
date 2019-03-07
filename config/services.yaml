@@ -23,5 +23,16 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    users_manager:
+        class: App\Manager\UserManager
+
+    api.authenticator:
+        class: App\Security\Authenticator
+
+    api.acces_manager:
+        class: App\Security\Managers\AccessManager
+
+    api.annotation_driver:
+        class: App\Security\Annotations\Drivers\AnnotationDriver
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
